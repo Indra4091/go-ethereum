@@ -587,17 +587,29 @@ func (c *falconVerf) Run(input []byte) ([]byte, error) {
 	var signature []byte
 
 	i := 0
-	for i < 512 {
-		pubkey = append(pubkey, int16(input[i]))
+	for i < 1024 {
+		var arr [2]byte
+		var val int16
+
+		arr[0] = input[i]
+		arr[1] = input[i+1]
+
+		val = int16(arr[0])
+		val = val << 8
+		val += int16(arr[1])
+
+		pubkey = append(pubkey, val)
+
+		i += 1
 	}
 
-	i = 512
-	for i < 512+32 {
+	i = 1024
+	for i < 1024+32 {
 		message = append(message, input[i])
 	}
 
-	i = 512 + 32
-	for i < 512+32+666 {
+	i = 1024 + 32
+	for i < 1024+32+666 {
 		signature = append(signature, input[i])
 	}
 
