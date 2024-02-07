@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.2.0
-	github.com/Indra4091/falconGo v0.0.0-20240124145320-48070e24df1a
+	github.com/Indra4091/falconGo v0.0.0-20240206105545-d94733f4cf75
 	github.com/Microsoft/go-winio v0.6.1
 	github.com/VictoriaMetrics/fastcache v1.12.1
 	github.com/aws/aws-sdk-go-v2 v1.21.2
@@ -64,7 +64,7 @@ require (
 	github.com/urfave/cli/v2 v2.25.7
 	go.uber.org/automaxprocs v1.5.2
 	golang.org/x/crypto v0.18.0
-	golang.org/x/exp v0.0.0-20240119083558-1b970713d09a
+	golang.org/x/exp v0.0.0-20240205201215-2c58cdc269a3
 	golang.org/x/sync v0.6.0
 	golang.org/x/sys v0.16.0
 	golang.org/x/text v0.14.0
