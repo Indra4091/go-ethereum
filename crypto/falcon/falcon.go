@@ -1,9 +1,6 @@
 package falcon
 
 import (
-	"fmt"
-	"math"
-
 	src "github.com/Indra4091/falconGo/src"
 )
 
@@ -13,21 +10,5 @@ import (
 
 // include a message, private key, signature here
 func Falcon_verify(input []byte) bool {
-	var converted []uint8
-	var c uint8
-	c = 0
-
-	for i := 0; i < 1722; i++ {
-		for j := 0; j < 32; j++ {
-			if input[i*32+j] == 1 {
-				c += uint8(math.Pow(2, float64(31-j)))
-			}
-		}
-		converted = append(converted, c)
-		c = 0
-	}
-
-	fmt.Printf("%v", converted[0])
-
-	return src.VerifyBytes(converted)
+	return src.VerifyBytes(input)
 }
